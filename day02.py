@@ -1,4 +1,4 @@
-math_values = [3.14, 2.71]
-print(f'원주율의 값은 {math_values[0]}이고 타입은 {type(math_values)}입니다')
-math_values[0] = 9.99
-print(f'원주율의 값은 {math_values[0]}이고 타입은 {type(math_values)}입니다')
+print(2 ** 4)
+print(divmod(9, 5))
+print(pow(2, 5))
+print((-5) ** 2)
