@@ -1,11 +1,10 @@
-# Chap 4 if
 import random
 
-limits = 20
-tweets = "pass" * random.randint(1, 10)
-diff = limits - len(tweets)
-# if diff := limits - len(tweets) >= 0:
-if diff >= 0:
-    print(tweets)
+secret = random.randint(1, 10)
+guess = random.randint(1, 10)
+if guess < secret:
+    print('too low')
+elif guess > secret:
+    print('too high')
 else:
-    print(f'글자 수 {abs(diff)}초과')
+    print('just right')
