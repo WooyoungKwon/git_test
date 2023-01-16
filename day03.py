@@ -1,11 +1,4 @@
-guess_me = 5
-number = 1
-for i in range(number, 10):
-    if i < guess_me:
-        print('too low')
-    elif number == guess_me:
-        print('found it!')
-        break
-    else:
-        print('oops')
-        break
+du = 'Ducky McDuckface'
+go = 'Gourdy McGourdface'
+sp = 'Spitzy McSpitzface'
+print('an English Submarine 이름은 %s로 지어졌다. \nan Australian racehorse 이름은 %s로 지어졌다. \na Swedish train 이름은 %s로 지어졌다.' % (sp, du, go))
