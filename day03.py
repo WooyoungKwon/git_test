@@ -1,7 +1,7 @@
-guess_me = 7
+guess_me = 5
 number = 1
-while True:
-    if number < guess_me:
+for i in range(number, 10):
+    if i < guess_me:
         print('too low')
     elif number == guess_me:
         print('found it!')
@@ -9,4 +9,3 @@ while True:
     else:
         print('oops')
         break
-    number += 1
