@@ -1,8 +1,5 @@
-life = {
-    'animals': {'cats': 'Henri', 'octopi': 'Grumpy', 'emus': 'Lucy'},
-    'plants': ' ',
-    'other': ' '
-}
-[print(key) for key in life]
-[print(key) for key in life['animals'].keys()]
-print(life['animals']['cats'])
+squares = {k: k**2 for k in range(10)}
+odd = {num for num in squares if num % 2 == 1}
+generator = (ge for ge in odd)
+for i in generator:
+    print(i)
