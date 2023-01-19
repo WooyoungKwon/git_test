@@ -1,15 +1,8 @@
-def start(func):
-    def func2():
-        print('start')
-        func()
-        print('end')
-
-    return func2()
+class OopsException(Exception):
+    print('Caught an oops')
 
 
-def temp():
-    pass
-
-
-start(temp)
-
+try:
+    raise OopsException()
+except OopsException as exc:
+    print(exc)
