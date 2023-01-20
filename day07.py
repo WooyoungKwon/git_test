@@ -1,8 +1,16 @@
-class Thing:
-    pass
+#10.2
+class Thing2:
+    letters = 'abc'
 
 
-example = Thing
+aa = Thing2
+print(Thing2.letters)
 
-if example == Thing:
-    print(1)
+
+#10.3
+class Thing3:
+    letters = 'abc'
+    print(letters)
+
+
+Thing3()
