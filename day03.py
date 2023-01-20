@@ -1,8 +1,8 @@
-class OopsException(Exception):
-    print('Caught an oops')
+def flatten(lol):
+    for item in lol:
+        if isinstance(item, list):
+            for subitem in flatten(item):
+                yield subitem
+        else:
+            yield item
 
-
-try:
-    raise OopsException()
-except OopsException as exc:
-    print(exc)
