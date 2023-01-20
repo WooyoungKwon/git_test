@@ -1,16 +1,9 @@
-#10.2
-class Thing2:
-    letters = 'abc'
+#10.4
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
 
 
-aa = Thing2
-print(Thing2.letters)
-
-
-#10.3
-class Thing3:
-    letters = 'abc'
-    print(letters)
-
-
-Thing3()
+no1 = Element('Hydrogen', 'H', 1)
