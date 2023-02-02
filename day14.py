@@ -1,33 +1,70 @@
-# 10.4
-class Element:
-    def __init__(self, name, symbol, number):
-        self.__name = name
-        self.__symbol = symbol
-        self.__number = number
+# 10.9
+class Bear:
 
-    # 10.8
-    @property
-    def get_name(self):
-        return self.__name
+    def __init__(self):
+        self.eat = 'berries'
 
-    @property
-    def get_symbol(self):
-        return self.__symbol
-
-    @property
-    def get_number(self):
-        return self.__number
-
-    # 10.7
-    def __str__(self):
-        return self.__name
+    def eats(self):
+        return self.eat
 
 
-el_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': 1}
-hydrogen = Element(el_dict['name'], el_dict['symbol'], el_dict['number'])   # 10.5
-print(hydrogen.get_number, hydrogen.get_symbol, hydrogen.get_name)
+class Rabbit:
+    def __init__(self):
+        self.eat = 'clover'
+
+    def eats(self):
+        return self.eat
 
 
+class Octothorpe:
+    def __init__(self):
+        self.eat = 'campers'
+
+    def eats(self):
+        return self.eat
 
 
+bear = Bear()
+rabbit = Rabbit()
+octothorpe = Octothorpe()
 
+print(bear.eats(), rabbit.eats(), octothorpe.eats())
+
+
+# 10.10
+class Laser:
+    def __init__(self):
+        self.name = 'disintegrate'
+
+    def does(self):
+        return self.name
+
+
+class Claw:
+    def __init__(self):
+        self.name = 'crush'
+
+    def does(self):
+        return self.name
+
+
+class SmartPhone:
+    def __init__(self):
+        self.name = 'ring'
+
+    def does(self):
+        return self.name
+
+
+class Robot:
+    def __init__(self):
+        self.laser = Laser()
+        self.claw = Claw()
+        self.smartphone = SmartPhone()
+
+    def does(self):
+        print(self.laser.does(), self.claw.does(), self.smartphone.does())
+
+
+robot = Robot()
+robot.does()
