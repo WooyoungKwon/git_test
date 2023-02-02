@@ -1,31 +1,32 @@
-# 10.2
-class Thing2:
-    letter = 'abc'
-    print(letter)
-
-
-# 10.3
-class Thing3:
-    print(Thing2.letter)
-
-
 # 10.4
 class Element:
     def __init__(self, name, symbol, number):
-        self.name = name
-        self.symbol = symbol
-        self.number = number
+        self.__name = name
+        self.__symbol = symbol
+        self.__number = number
 
-    def dump(self):     # 10.6
-        print(self.name, self.symbol, self.number)
+    # 10.8
+    @property
+    def get_name(self):
+        return self.__name
 
+    @property
+    def get_symbol(self):
+        return self.__symbol
 
-obj = Element('Hydrogen', 'H', 1)
+    @property
+    def get_number(self):
+        return self.__number
+
+    # 10.7
+    def __str__(self):
+        return self.__name
+
 
 el_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': 1}
 hydrogen = Element(el_dict['name'], el_dict['symbol'], el_dict['number'])   # 10.5
+print(hydrogen.get_number, hydrogen.get_symbol, hydrogen.get_name)
 
-hydrogen.dump()    # 10.6
 
 
 
