@@ -8,12 +8,39 @@ def push(data):
     stack[top] = data
 
 
+def isStackEmpty():
+    global size, stack, top
+    if top == -1:
+        return True
+    else:
+        return False
+
+
+def pop():
+    global size, stack, top
+    if isStackEmpty():
+        print('스택이 비었습니다')
+        return None
+    data = stack[top]
+    stack[top] = None
+    top -= 1
+    return data
+
+
+def peek():
+    global size, stack, top
+    if isStackEmpty():
+        print("스택이 비었습니다")
+        return None
+    return stack[top]
+
+
 size = 5
-# stack = [None for _ in range(size)
-stack = ['커피', '녹차', '우유', '물', None]
-top = 3
+stack = ['커피', None, None, None, None]
+top = 0
 
 print(stack)
-push('환타')
+retData = peek()
+print('데이터 ---> ', retData)
 print(stack)
-push('게토레이')
+retData = pop()

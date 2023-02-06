@@ -16,3 +16,20 @@
 6. return current
    current.link != head
    current = current.link
+
+
+# 6장 연습문제
+
+1. 4
+
+2. insert, push, pop
+
+3. top += 1
+   top -= 1
+
+4. 2
+
+5. 2
+
+6. return None
+   return stack[top]
