@@ -4,6 +4,7 @@
 
 class Pokemon:
     count = 0
+
     def __init__(self, owner, skills):
         self.__hidden_owner = owner  # like private
         self.skills = skills.split('/')
