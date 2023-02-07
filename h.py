@@ -1,37 +1,82 @@
-def insert_data(index, pokemon):
-    if index < 0 or index > len(pokemons):
-        print("Out of range!")
+## 함수 선언 부분 ##
+def isStackFull():
+    global SIZE, stack, top
+    if top >= SIZE - 1:
+        return True
+    else:
+        return False
+
+
+def isStackEmpty():
+    global SIZE, stack, top
+    if top == -1:
+        return True
+    else:
+        return False
+
+
+def push(data):
+    global SIZE, stack, top
+    if isStackFull():
+        print("스택이 꽉 찼습니다.")
         return
-
-    pokemons.append(None)  # 빈칸 추가
-
-    for i in range(len(pokemons) - 1, index, -1):
-        pokemons[i] = pokemons[i - 1]
-        pokemons[i - 1] = None
-
-    pokemons[index] = pokemon
-    #
+    top += 1
+    stack[top] = data
 
 
-# 함수 사이 줄바꿈 2개(권고 규정)
-def delete_data(index):
-    if index < 0 or index > len(pokemons):
-        print("Out of range!")
-        return
-
-    len_pokemons = len(pokemons)  # python에서 kLen같은 표기는 지양
-    pokemons[index] = None  # 데이터 삭제
-
-    for i in range(index + 1, len_pokemons):
-        pokemons[i - 1] = pokemons[i]
-        pokemons[i] = None
-    pokemons.pop()
+def pop():
+    global SIZE, stack, top
+    if isStackEmpty():
+        print("스택이 비었습니다.")
+        return None
+    data = stack[top]
+    stack[top] = None
+    top -= 1
+    return data
 
 
-# main 함수처럼 만들기
+def peek():
+    global SIZE, stack, top
+    if isStackEmpty():
+        print("스택이 비었습니다.")
+        return None
+    return stack[top]
+
+
+def checkBracket(expr):
+    for ch in expr:
+        if ch in '([{<':
+            push(ch)
+        elif ch in ')]}>':
+            out = pop()
+            if ch == ')' and out == '(':
+                pass
+            elif ch == ']' and out == '[':
+                pass
+            elif ch == '}' and out == '{':
+                pass
+            elif ch == '>' and out == '<':
+                pass
+            else:
+                return False
+        else:
+            pass
+    if isStackEmpty():
+        return True
+    else:
+        return False
+
+
+## 전역 변수 선언 부분 ##
+SIZE = 100
+stack = [None for _ in range(SIZE)]
+top = -1
+
+## 메인 코드 부분 ##
 if __name__ == "__main__":
-    pokemons = ["피카츄", "라이츄", "꼬부기", "파이리", "이상해"]
 
-    print(pokemons)
-    delete_data(2)
-    print(pokemons)x`
+    exprAry = ['(A+B)', ')A+B(', '((A+B)-C', '(A+B]', '(<A+{B-C}/[C*D]>)']
+
+    for expr in exprAry:
+        top = -1
+        print(expr, '==>', checkBracket(expr))

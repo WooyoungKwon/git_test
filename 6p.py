@@ -1,6 +1,6 @@
 #6.1
 def push(data):
-    global size, stack, top
+    global SIZE, stack, top
     if top >= size-1:
         print('스택이 꽉 찼습니다')
         return
@@ -9,7 +9,7 @@ def push(data):
 
 
 def isStackEmpty():
-    global size, stack, top
+    global SIZE, stack, top
     if top == -1:
         return True
     else:
@@ -17,7 +17,7 @@ def isStackEmpty():
 
 
 def pop():
-    global size, stack, top
+    global SIZE, stack, top
     if isStackEmpty():
         print('스택이 비었습니다')
         return None
@@ -28,14 +28,14 @@ def pop():
 
 
 def peek():
-    global size, stack, top
+    global SIZE, stack, top
     if isStackEmpty():
         print("스택이 비었습니다")
         return None
     return stack[top]
 
 
-size = 5
+SIZE = 5
 stack = ['커피', None, None, None, None]
 top = 0
 
